@@ -1,0 +1,32 @@
+{
+  "name": "12-express-middleware",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) 12: Express Middleware ====== * TRAVIS BADGE: * TRAVIS: * HEROKU:  * GitHUB PR:",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "lint": "eslint **/*.js",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitHubMaxwell/12-express-middleware.git"
+  },
+  "author": "maxwell rediker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GitHubMaxwell/12-express-middleware/issues"
+  },
+  "homepage": "https://github.com/GitHubMaxwell/12-express-middleware#readme",
+  "dependencies": {
+    "babel-env": "^2.4.1",
+    "babel-eslint": "^8.2.3",
+    "babel-register": "^6.26.0",
+    "dotenv": "^6.0.0",
+    "eslint": "^4.19.1",
+    "express": "^4.16.3",
+    "jest": "^23.1.0",
+    "superagent": "^3.8.3",
+    "uuid": "^3.2.1"
+  }
+}
