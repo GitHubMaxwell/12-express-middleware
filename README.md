@@ -1,5 +1,13 @@
 ![cf](https://i.imgur.com/7v5ASc8.png) 12: Express Middleware
 ======
+* TRAVIS BADGE:
+* TRAVIS:
+* HEROKU: 
+* GitHUB PR:
+
+##Steps
+* download code
+
 
 ## Submission Instructions
 * Work in a fork of this repository
