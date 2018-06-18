@@ -98,6 +98,17 @@ storage.save = (data) => {
   });
 };
 
+
+/*TODO: make methods
+
+storage.deleteItems
+
+storage.availIds
+
+in youtube but not in the lab assignment repo
+
+*/
+
 export default storage;
 
 //make the UPDATE method

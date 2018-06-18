@@ -4,7 +4,6 @@ const debug = require('debug')('app');
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
-
 import errorHandler from './middleware/error.js';
 import notFound from './middleware/404.js';
 
@@ -40,6 +39,8 @@ module.exports = {
       server = app.listen(port, err => {
         if(err) {throw err;}
         isRunning = true;
+        console.log(`Server is up on port: ${port}`);
+
         //what is debug
         debug(`Server is up on port: ${port}`);
       });

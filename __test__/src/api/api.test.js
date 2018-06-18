@@ -4,6 +4,10 @@ import app from '../../../src/app.js';
 import superagent from 'superagent';
 // import app from '../../../src/app.js';
 
+//create acceptance tests for GET PUT POST = use superagent
+//use beforeAll and afterAll
+//delete created notes after the tests have completed
+
 beforeAll(() => {
   app.start(3000);
 });
@@ -13,8 +17,13 @@ afterAll(() => {
 });
 
 describe('API MODULE', () => {
-  it('GET pass: should return a 200', () => {
-    expect(true).toBe(true);
+  it('POL test', () => {
+    expect(true).toBe(false);
+  });
+
+  it('GET SUCCESS: test', () => {
+    
+    expect(true).toBe(false);
   });
 
 

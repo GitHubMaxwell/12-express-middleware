@@ -7,7 +7,7 @@ let dataStorageModule = {};
 
 //Based what STORAGE is set to in our env file or from any other mechanism that sets this
 
-//gonna have a dope ass switch statement which, per our storage mode selection (via env file in this case = process.env.STORAGE) will check the first
+//switch statement which, per our storage mode selection (via env file in this case = process.env.STORAGE) will use the first
 
 switch( process.env.STORAGE) {
 case 'filesystem':
