@@ -9,5 +9,3 @@
 * download (fork/clone) code
 * type jest in terminal to see passing tests on desired http methods
 * or run nodemon and experiment in postman
-
-
