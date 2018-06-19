@@ -1,5 +1,5 @@
 'use strict';
-import app from '../../../src/app.js';
+let app = require('../../../src/app.js');
 
 import superagent from 'superagent';
 // import app from '../../../src/app.js';
@@ -8,23 +8,59 @@ import superagent from 'superagent';
 //use beforeAll and afterAll
 //delete created notes after the tests have completed
 
-beforeAll(() => {
-  app.start(3000);
-});
-      
-afterAll(() => {
-  app.stop();
-});
+
 
 describe('API MODULE', () => {
-  it('POL test', () => {
-    expect(true).toBe(false);
+  // it('POL test', () => {
+  //   expect(true).toBe(false);
+  // });
+  beforeAll(() => {
+    app.start(3000);
+  });
+        
+  afterAll(() => {
+    app.stop();
   });
 
-  it('GET SUCCESS: test', () => {
-    
-    expect(true).toBe(false);
+  it('POST SUCCESS: test', (done) => {
+    let obj = {
+      content:'max',
+      title:'maxtitle',
+    };
+  
+    superagent.post('http://localhost:3000/api/v1/cats')
+      .send(obj)
+      .then(data => {
+        // wasnt getting body back because getJSON wasnt sending it back
+        expect(data.body.title).toEqual('maxtitle');
+        expect(data.status).toEqual(200);
+        done();
+      });
   });
+
+  it('GET SUCCESS: test', (done) => {
+    let obj = {
+      content:'max',
+      title:'maxtitle',
+    };
+  
+    superagent.post('http://localhost:3000/api/v1/cats')
+      .send(obj)
+      .then(data => {
+        // console.log('RES BODY: ', res.body);
+        // console.log('RES BODY STATUS: ', res.status);
+        superagent.get(`http://localhost:3000/api/v1/cats/${data.body.id}`)
+          .then(res => {
+            // expect(data).toBeDefined();
+            //after confirmed getting positve make it fail just to stress test it
+            expect(res.body.title).toEqual('maxtitle');
+            expect(res.status).toEqual(200);
+            done();
+          });
+      });
+  });
+
+}); //closing describe
 
 
 //   it('POST FAIL test', (done) => {
@@ -38,4 +74,3 @@ describe('API MODULE', () => {
 //         done();
 //       });
 //   });
-});

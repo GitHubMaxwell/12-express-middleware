@@ -13,6 +13,7 @@ class Cats {
   }
   save() {
     //dont foget to pass in the contextual 'this' for stoarge to use / also why is update using this? / when you call update should it create an entire new content BUT with the same id / how to prevent it from doing this / set the id to handle a already determined id with the config stuff
+    // console.log('CATS SAVE');
     return storage.save(this);
   }
 
