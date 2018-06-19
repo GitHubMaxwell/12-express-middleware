@@ -67,12 +67,12 @@ describe('API MODULE', () => {
       });
   });
 
-  it('DELETE ALL SUCCESS: test', (done) => {
-    superagent.delete('http://localhost:3000/api/v1/cats')
-      .then(data => {
-        expect(data.status).toEqual(200);
-        done();
-      });
-  });
+  // it('DELETE ALL SUCCESS: test', (done) => {
+  //   superagent.delete('http://localhost:3000/api/v1/cats')
+  //     .then(data => {
+  //       expect(data.status).toEqual(200);
+  //       done();
+  //     });
+  // });
 
 }); //closing describe
