@@ -2,7 +2,6 @@
 
 import storage from '../lib/storage/data-store.js';
 import uuid from 'uuid/v1';
-//why is this one v1 and the other isnt / check the npm docs on this i remember that you can set it to between v1-v4 for some reason
 
 class Cats {
   constructor(config) {
@@ -16,28 +15,22 @@ class Cats {
     // console.log('CATS SAVE');
     return storage.save(this);
   }
-
-  //static methods
-
-  //get all
   static fetchAll() {
     return storage.getAll();
   }
-  //get one
   static findOne(id) {
-    //is it get one or its actually just getting all those bound to the id
     return storage.get(id);
   }
-  //update one
 
   static updateOne(criteria) {
+    //should work the same as save
     return storage.save(this);
   }
-  //delete one
   static delete(id) {
-  //delete all tied to the id not just one
-  //could tie it to take in another parameter the title || by content or soemthing
     return storage.delete(id);
+  }
+  static deleteAll() {
+    return storage.deleteAll();
   }
 }
 

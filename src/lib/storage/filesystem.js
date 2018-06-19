@@ -26,6 +26,8 @@ let readFilePromise =  function(filename) {
 
 // GET ALL
 storage.getAll = () => {
+  console.log('FILESAVE GETALL');
+
   debug('getting all');
 
   return new Promise( (resolve,reject) => {
@@ -57,6 +59,8 @@ storage.getAll = () => {
 };
 
 storage.get = (id) => {
+  // console.log('FILESAVE GET');
+
   debug(`getting ${id}`);
 
   return new Promise((resolve,reject) => {
@@ -83,6 +87,7 @@ storage.get = (id) => {
 };
 
 storage.save = (data) => {
+  console.log('FILESAVE SAVE');
   debug(`saving ${JSON.stringify(data)}`);
 
   return new Promise((resolve,reject) => {
@@ -98,17 +103,27 @@ storage.save = (data) => {
   });
 };
 
+storage.deleteAll = () => {
+  console.log('FILESAVE Delete');
 
-/*TODO: make methods
-
-storage.deleteItems
-
-storage.availIds
-
-in youtube but not in the lab assignment repo
-
-*/
+  return new Promise((resolve,reject) => {
+    // let file = `${dataDirectory}/${data.id}.json`;
+    fs.readdir(dataDirectory, (err, files) => {
+      console.log('dataDirectory',dataDirectory);
+      if (err) throw err;
+    
+      for (let file of files) {
+        file = `${dataDirectory}/${file}`;
+        fs.unlink(file, (err) => {
+          if (err) {
+            console.log('unlink ERROR');
+            reject(err);}
+          console.log(`${file} was deleted`);
+        });
+      }
+      resolve('DELETE ALL SUCCESS');
+    });
+  });
+};
 
 export default storage;
-
-//make the UPDATE method

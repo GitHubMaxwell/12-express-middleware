@@ -1,27 +1,11 @@
 ![cf](https://i.imgur.com/7v5ASc8.png) 12: Express Middleware
 ======
-* TRAVIS BADGE: [![Build Status](https://travis-ci.com/GitHubMaxwell/12-express-middleware.svg?branch=max-lab12)](https://travis-ci.com/GitHubMaxwell/12-express-middleware)
+* TRAVIS BADGE: [![Build Status](https://travis-ci.com/GitHubMaxwell/12-express-middleware.svg?branch=max-clean-lab12)](https://travis-ci.com/GitHubMaxwell/12-express-middleware)
 * TRAVIS: https://github.com/GitHubMaxwell/12-express-middleware
-* HEROKU: 
+* HEROKU: https://lab12-max.herokuapp.com/
 * GitHUB PR:
 
 ##Steps
 * download (fork/clone) code
-* type jest
-* win at life
-
-
-## Submission Instructions
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Create a PR to your master from your working branch.
-* Ensure that your repository/branch is connected to travis-ci.com
-* Ensure that your repository/branch is connected to a dyno at heroku.com
-* Heroku and Travis should pick you up and deploy
-* Submit on canvas:
-  * a question and observation
-  * how long you spent
-  * link to your pull request
-  * link to your build at travis-ci URL
-  * Heroku Server URL
-
+* type jest in terminal to see passing tests on desired http methods
+* or run nodemon and experiment in postman

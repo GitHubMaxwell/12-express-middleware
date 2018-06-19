@@ -4,16 +4,7 @@ let app = require('../../../src/app.js');
 import superagent from 'superagent';
 // import app from '../../../src/app.js';
 
-//create acceptance tests for GET PUT POST = use superagent
-//use beforeAll and afterAll
-//delete created notes after the tests have completed
-
-
-
 describe('API MODULE', () => {
-  // it('POL test', () => {
-  //   expect(true).toBe(false);
-  // });
   beforeAll(() => {
     app.start(3000);
   });
@@ -31,7 +22,6 @@ describe('API MODULE', () => {
     superagent.post('http://localhost:3000/api/v1/cats')
       .send(obj)
       .then(data => {
-        // wasnt getting body back because getJSON wasnt sending it back
         expect(data.body.title).toEqual('maxtitle');
         expect(data.status).toEqual(200);
         done();
@@ -51,8 +41,6 @@ describe('API MODULE', () => {
         // console.log('RES BODY STATUS: ', res.status);
         superagent.get(`http://localhost:3000/api/v1/cats/${data.body.id}`)
           .then(res => {
-            // expect(data).toBeDefined();
-            //after confirmed getting positve make it fail just to stress test it
             expect(res.body.title).toEqual('maxtitle');
             expect(res.status).toEqual(200);
             done();
@@ -69,13 +57,9 @@ describe('API MODULE', () => {
     superagent.post('http://localhost:3000/api/v1/cats')
       .send(obj)
       .then(data => {
-        // console.log('RES BODY: ', res.body);
-        // console.log('RES BODY STATUS: ', res.status);
         superagent.put(`http://localhost:3000/api/v1/cats/${data.body.id}`)
           .send({content: 'john', title: 'smith'})
           .then(res => {
-            // expect(data).toBeDefined();
-            //after confirmed getting positve make it fail just to stress test it
             expect(res.body.title).toEqual('smith');
             expect(res.status).toEqual(200);
             done();
@@ -83,17 +67,12 @@ describe('API MODULE', () => {
       });
   });
 
+  it('DELETE ALL SUCCESS: test', (done) => {
+    superagent.delete('http://localhost:3000/api/v1/cats')
+      .then(data => {
+        expect(data.status).toEqual(200);
+        done();
+      });
+  });
+
 }); //closing describe
-
-
-//   it('POST FAIL test', (done) => {
-//     let obj = {};
-
-//     superagent.post('http://localhost:3000/api/v1/notes')
-//       .send(obj)
-//       .catch( res => {
-//         expect(res.status).toEqual(400);
-//         expect(res.message).toBe('Bad Request');
-//         done();
-//       });
-//   });
