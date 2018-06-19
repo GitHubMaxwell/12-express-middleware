@@ -44,6 +44,16 @@ router.get('/api/v1/:model/:id', (req,res,next) => {
   //pass onto the next in the app.js
 });
 
+router.put('/api/v1/:model/:id', (req,res,next) => {
+  console.log('PUUUUUUUUUUUUUUUTTTTTTTT');
+  let record = new req.model(req.body);
+  //   console.log('RECORD: ', record);
+  record.save()
+    .then(data => sendJSON(res,data))
+    .catch(next);
+  //call the next function next(passStuffIn) if you wanted to
+  //pass onto the next in the app.js
+});
 router.post('/api/v1/:model', (req,res,next) => {
 //   console.log('GOT TO POST in api.js');
   //what is new req.model???

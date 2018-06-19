@@ -60,6 +60,29 @@ describe('API MODULE', () => {
       });
   });
 
+  it('PUT SUCCESS: test', (done) => {
+    let obj = {
+      content:'max',
+      title:'maxtitle',
+    };
+  
+    superagent.post('http://localhost:3000/api/v1/cats')
+      .send(obj)
+      .then(data => {
+        // console.log('RES BODY: ', res.body);
+        // console.log('RES BODY STATUS: ', res.status);
+        superagent.put(`http://localhost:3000/api/v1/cats/${data.body.id}`)
+          .send({content: 'john', title: 'smith'})
+          .then(res => {
+            // expect(data).toBeDefined();
+            //after confirmed getting positve make it fail just to stress test it
+            expect(res.body.title).toEqual('smith');
+            expect(res.status).toEqual(200);
+            done();
+          });
+      });
+  });
+
 }); //closing describe
 
 

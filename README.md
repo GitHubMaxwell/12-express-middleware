@@ -1,7 +1,7 @@
 ![cf](https://i.imgur.com/7v5ASc8.png) 12: Express Middleware
 ======
-* TRAVIS BADGE:
-* TRAVIS:
+* TRAVIS BADGE: [![Build Status](https://travis-ci.com/GitHubMaxwell/12-express-middleware.svg?branch=max-lab12)](https://travis-ci.com/GitHubMaxwell/12-express-middleware)
+* TRAVIS: https://github.com/GitHubMaxwell/12-express-middleware
 * HEROKU: 
 * GitHUB PR:
 

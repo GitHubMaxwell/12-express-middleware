@@ -36,7 +36,7 @@ storage.getAll = () => {
       while (files.length) {
         let file = files.shift();
         file = `${dataDirectory}/${file}`;
-        //i thought to taget anything at the END of a word you had to put a $ at the end of the regex  /check out regex101
+        //i thought to target anything at the END of a word you had to put a $ at the end of the regex  /check out regex101
         if(file.match(/\.json/)) {promises.push( readFilePromise(file));}
       }
 
