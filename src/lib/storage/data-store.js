@@ -11,7 +11,7 @@ case 'filesystem':
   break;
 default:
 //forcing fileStorage
-  dataStorageModule = fileStorage;
+  dataStorageModule = memoryStorage;
   break;
 // default:
 //   dataStorageModule = memoryStorage;
